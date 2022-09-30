@@ -14,10 +14,11 @@ html {
 body {
   background-color: #1a1a1a;
   color:aqua;
-  text-align: center;
   font-size: 28px;
-  font-family: system-ui, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
-    'Helvetica Neue', sans-serif;
+  font-family: Roboto;
+  background-image: url("https://i.imgur.com/Nlrk9Il.jpg");
+  background-position: right;
+  background-repeat: no-repeat;
 }
 
 
