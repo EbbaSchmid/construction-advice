@@ -1,65 +1,20 @@
-# MEN Stack with OAuth Template
 
-This is a MEN Stack template that includes OAuth.
+This tracker is used to offer tips & tricks for those in the Construction industry. 
 
-Use this to go build things! 🚀
 
-## To Use This Template
+The advice you give can be directed towards people thinking about getting into Construction, Apprentices, Journeyman and beyond!
 
-__Replace `<name-of-your-app-here>` in the commands below with the name of your app!__
 
-```bash
-git clone https://github.com/SEI-Remote/men-stack-oauth-template.git <name-of-your-app-here>
-cd <name-of-your-app-here>
-```
+I know when I first started out as a Union Carpenter, I had a lot of questions! I also sometimes didn’t know what questions to even ask. 
 
-Once you are in the project directory:
 
-```bash
-rm -rf .git
-```
+Let’s pay it forward and reach back to lift as we climb.
 
-Here's what your command line output should like after this step (note that the indicator that we are in a git repository is gone!)
 
-<img src="https://i.imgur.com/L47kNOZ.png" alt="The command line before and after running the rm -rf .git command. Before git:(main) is visible indiating that the directory contains a git repository, after the command it is not.">
+Get started by creating a Profile!
 
-Re-initialize a git repository:
 
-```bash
-git init
-```
+“Lifting as we climb, onward and upward we go, struggling and striving and hoping that the buds and blossoms of our desires will burst into glorious fruition ere long …”
 
-Create a repo for this project on GitHub and add that remote to your project with `git remote add origin Your-repo-URL-here`.
-
-Run npm i to fetch the template's dependencies:
-
-```bash
-npm i
-```
-
-touch a .env file:
-
-```bash
-touch .env
-```
-
-Fill it with the following:
-
-```
-DATABASE_URL=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-GOOGLE_CLIENT_ID=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-GOOGLE_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-SESSION_SECRET=XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX
-```
-
-Replace the `DATABASE_URL`, `GOOGLE_CLIENT_ID`, `GOOGLE_SECRET`, and `SESSION_SECRET` with values that you provide.
-
-Delete this `README.md` file and finally, make an initial commit:
-
-```bash
-git add .
-git commit -m "initial commit"
-git push -u origin main
-```
-
-You're done!
+-Mary Church Terrell (1863-1954) 
+Suffragist and Civil Rights Champion
