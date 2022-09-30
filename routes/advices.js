@@ -4,22 +4,25 @@ import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
-// GET localhost:3000/tacos
+// GET localhost:3000/advices
 router.get('/', advicesCtrl.index)
 
-// GET localhost:3000/tacos/:id
+// GET localhost:3000/advices/:id
 router.get('/:id', advicesCtrl.show)
 
-// GET localhost:3000/tacos/:id/edit
+// GET localhost:3000/advices/:id/edit
 router.get('/:id/edit', isLoggedIn, advicesCtrl.edit)
 
-// POST localhost:3000/tacos
+// POST localhost:3000/advices
 router.post('/', isLoggedIn, advicesCtrl.create)
 
-// PUT localhost:3000/tacos/:id
+// // PATCH localhost:3000/tacos/:id/flip-tasty
+// router.patch('/:id/helpful-advice', isLoggedIn, advicesCtrl.helpfulAdvice)
+
+// PUT localhost:3000/advices/:id
 router.put('/:id', isLoggedIn, advicesCtrl.update)
 
-// DELETE localhost:3000/tacos/:id
+// DELETE localhost:3000/advices/:id
 router.delete('/:id', isLoggedIn, advicesCtrl.delete)
 
 export {

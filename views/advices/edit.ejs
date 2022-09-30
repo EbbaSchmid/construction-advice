@@ -1,0 +1,28 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Edit Advice!</h1>
+  <form action="/advices/<%= advice._id %>?_method=PUT" method="POST">
+    <label>
+      Advice:
+      <input 
+        type="text" 
+        name="name"
+        value="<%= advice.name %>"
+        autocomplete="off"
+      >
+    </label>
+    <label>
+      Helpful:
+      <input 
+        type="checkbox" 
+        name="helpful"
+        <%= advice.helpful ? "checked" : "" %> 
+      >
+    </label>
+    <button type="submit">Edit Advice</button>
+  </form>
+</section>
+
+<%- include('../partials/footer') %>
