@@ -1,0 +1,23 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <h1>Advice:</h1>
+  <% if (user) { %>
+    <h2>Add Advice!</h2>
+    <form action="/advices" method="POST">
+      <label>
+        Advice:
+        <input type="text" name="advice" value= "" maxlength = "200" autocomplete="off">
+      </label>
+      <label>
+        Tags:
+        <input type="checkbox" name="tags">
+      </label>
+      <button type="submit">Add </button>
+    </form>
+  <% } %>
+  </ul>
+</section>
+
+<%- include('../partials/footer') %>
