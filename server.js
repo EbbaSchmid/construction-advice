@@ -43,7 +43,13 @@ app.use(
   )
 )
 
-// session middleware
+app.use(express.urlencoded({ extended: true }))
+app.use(
+  express.static(
+    path.join(path.dirname(fileURLToPath(import.meta.url)), 'public')
+  )
+)
+// NEW middleware below!
 app.use(
   session({
     secret: process.env.SESSION_SECRET,
@@ -51,7 +57,7 @@ app.use(
     saveUninitialized: false,
     cookie: {
       sameSite: 'lax',
-    },
+    }
   })
 )
 
