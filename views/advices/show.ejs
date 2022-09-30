@@ -1,0 +1,26 @@
+<%- include('../partials/html-head') %>
+<%- include('../partials/nav') %>
+
+<section>
+  <p>Advice from <%= advice.owner ? advice.owner.name : "Unknown"%>...</p>
+  <h1><%= advice.name %></h1>
+  <h2>This advice is <%= advice.helpful ? 'Helpful!' : 'Not helpful' %></h2>
+  <% if (user) { %>
+    <form 
+    >
+      <button class="btn" type="submit">
+        Mark advice <%= advice.helpful ? 'not helpful' : 'helpful' %> 
+      </button>
+    </form>
+  <% } %>
+  <% if (advice.owner.equals(user?.profile._id)) { %>
+    <a href="/advices/<%= advice._id %>/edit">
+      <button class="btn">Edit this Advice</button>
+    </a>
+    <form action="/advices/<%= advice._id %>?_method=DELETE" method="POST">
+      <button class="btn" type="submit">Delete Advice</button>
+    </form>
+  <% } %>
+</section>
+
+<%- include('../partials/footer') %>

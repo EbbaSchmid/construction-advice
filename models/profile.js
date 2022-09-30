@@ -2,7 +2,7 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
-const ratingSchema = new Schema({
+const profileSchema = new Schema({
   name: String,
   avatar: String,
 }, {
