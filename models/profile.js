@@ -5,6 +5,10 @@ const Schema = mongoose.Schema
 const iconSchema = new Schema({
   name: String,
   avatar: String,
+  trade: String,
+  years: Number,
+  location: String,
+  local: Number,
 }, {
   timestamps: true
 })

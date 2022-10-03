@@ -17,13 +17,13 @@ router.get('/:id/edit', isLoggedIn, advicesCtrl.edit)
 router.post('/', isLoggedIn, advicesCtrl.create)
 
 // // PATCH localhost:3000/advices/:id/flip-helpful
-// router.patch('/:id/flip-helpful', isLoggedIn, advicesCtrl.flipHelpful)
+router.patch('/:id/flip-helpful', isLoggedIn, advicesCtrl.flipHelpful)
 
-// // PUT localhost:3000/advices/:id
-// router.put('/:id', isLoggedIn, advicesCtrl.update)
+// PUT localhost:3000/advices/:id
+router.put('/:id', isLoggedIn, advicesCtrl.update)
 
-// // DELETE localhost:3000/advices/:id
-// router.delete('/:id', isLoggedIn, advicesCtrl.delete)
+// DELETE localhost:3000/advices/:id
+router.delete('/:id', isLoggedIn, advicesCtrl.delete)
 
 export {
   router

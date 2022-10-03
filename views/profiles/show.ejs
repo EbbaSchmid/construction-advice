@@ -38,6 +38,25 @@
         autocomplete="off">
       </label>
 
+      <br>
+
+    <label>
+      Current Location:
+      <input 
+      type="text" 
+      name="location" 
+      autocomplete="off">
+    </label>
+
+    <label>
+      Are you in the Union, if so, what Local:
+      <input 
+      type="number" 
+      name="local" 
+      autocomplete="off">
+    </label>
+
+      <br>
       <button type="submit">Add</button>
     </form>
 
@@ -45,12 +64,12 @@
   <% if (profile.icons.length) { %>
     <%# THERE ARE ICONS FOR THIS PROFILE %> 
     <h2>
-      <%= isSelf ? "Here is your Bio" : `${profile.name} has` %>  
+      <%= isSelf ? "Here is your Bio" : `${profile.name}'s Bio:` %>  
     </h2>
     <% profile.icons.forEach(icon => { %>
       <h3>
         <%= getRandomIcon() %>
-        <%= profile.name %> has been a <%= profile.trade %> for <%= profile.years %> years.   
+        <%= profile.name %> has been a <%= profile.trade %> for <%= profile.years %> years. They are  currently living in <%= profile.location %> and are a member of Local <%= profile.local %>.
         <% if (isSelf) { %>
           
           <form 
