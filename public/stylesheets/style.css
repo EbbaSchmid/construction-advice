@@ -19,6 +19,19 @@ body {
   background-size: contain;
   background-repeat: no-repeat;
   color:#F1D302;
+  text-decoration: none;
+}
+
+a:link {
+  color:#F1D302;
+}
+
+a:visited {
+  color:#F1D302;
+}
+
+a:active {
+color:#F1D302;
 }
 
 #intro-text {
@@ -42,16 +55,24 @@ nav {
 .adviceBtn {
   background-color: black;
   color: #F1D302;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  justify-items: center;
   width: 100px;
-  height: 50px;
+  height: 30px;
   font-size: 28px;
 }
 
-#editAdviceBtn {
+.editAdviceBtn {
   background-color: black;
   color: #F1D302;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  justify-items: center;
   width: 200px;
-  height: 50px;
+  height: 30px;
   font-size: 28px;
 }
 
