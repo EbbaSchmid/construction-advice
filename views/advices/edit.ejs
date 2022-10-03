@@ -4,15 +4,16 @@
 <section>
   <h1>Edit Advice!</h1>
   <form action="/advices/<%= advice._id %>?_method=PUT" method="POST">
+    
     <label>
       Advice:
       <input 
         type="text" 
         name="advice"
         value="<%= advice.name %>"
-        autocomplete="off"
-      >
+        autocomplete="off">
     </label>
+    
     <label>
       Helpful:
       <input 

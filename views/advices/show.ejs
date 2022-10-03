@@ -7,14 +7,15 @@
   <h2>This advice is <%= advice.helpful ? 'Helpful!' : 'Not helpful' %></h2>
   <% if (user) { %>
     <form
-    action="/advices/<%= advice._id %>/flip-helpful?_method=PATCH"
-      method="POST"
-    >
+      action="/advices/<%= advice._id %>/flip-helpful?_method=PATCH"
+      method="POST">
+
       <button class="btn" type="submit">
         Mark advice <%= advice.helpful ? 'not helpful' : 'helpful' %> 
       </button>
     </form>
   <% } %>
+  
   <% if (advice.owner.equals(user?.profile._id)) { %>
     <a href="/advices/<%= advice._id %>/edit">
       <button class="btn">Edit Advice</button>
