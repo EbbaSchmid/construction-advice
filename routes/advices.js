@@ -11,12 +11,12 @@ router.get('/', advicesCtrl.index)
 router.get('/:id', advicesCtrl.show)
 
 // GET localhost:3000/advices/:id/edit
-// router.get('/:id/edit', isLoggedIn, advicesCtrl.edit)
+router.get('/:id/edit', isLoggedIn, advicesCtrl.edit)
 
 // POST localhost:3000/advices
 router.post('/', isLoggedIn, advicesCtrl.create)
 
-// // PATCH localhost:3000/tacos/:id/flip-tasty
+// // PATCH localhost:3000/advices/:id/flip-helpful
 // router.patch('/:id/flip-helpful', isLoggedIn, advicesCtrl.flipHelpful)
 
 // // PUT localhost:3000/advices/:id

@@ -63,19 +63,19 @@ function show(req, res) {
 //   })
 // }
 
-// function edit(req, res) {
-//   Advice.findById(req.params.id)
-//   .then(advice => {
-//     res.render('advices/edit', {
-//       advice: advice,
-//       title: "edit 📐"
-//     })
-//   })
-//   .catch(err => {
-//     console.log(err)
-//     res.redirect('/advices')
-//   })
-// }
+function edit(req, res) {
+  Advice.findById(req.params.id)
+  .then(advice => {
+    res.render('advices/edit', {
+      advice: advice,
+      title: "Edit Advice📐"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/advices')
+  })
+}
 
 // function update(req, res) {
 //   Advice.findById(req.params.id)
@@ -119,7 +119,7 @@ export {
   create,
   show,
   // flipHelpful,
-  // edit,
+  edit,
   // update,
   // deleteAdvice as delete,
   newAdvice as new,

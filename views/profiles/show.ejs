@@ -13,7 +13,7 @@
   <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
   <% if (isSelf) { %>
     <h2>Add an icon!</h2>
-    <form action="/profiles/<%= profile._id %>/icon" method="POST">
+    <form action="/profiles/<%= profile._id %>/icons" method="POST">
       <label>
         Name:
         <input type="text" name="name" autocomplete="off">
@@ -29,32 +29,32 @@
       <button type="submit">Add</button>
     </form>
   <% } %>
-  <% if (profile.cats.length) { %>
-    <%# THERE ARE CATS FOR THIS PROFILE %> 
+  <% if (profile.icons.length) { %>
+    <%# THERE ARE ICONS FOR THIS PROFILE %> 
     <h2>
-      <%= isSelf ? "You have" : `${profile.name} has` %> cats! Here they are! 
+      <%= isSelf ? "You have" : `${profile.name} has` %> icons! Here they are! 
     </h2>
-    <% profile.cats.forEach(cat => { %>
+    <% profile.icons.forEach(icon => { %>
       <h3>
-        <%= getRandomCat() %>
-        <%= cat.name %> is a <%= cat.age %> year old <%= cat.breed %>.   
+        <%= getRandomIcon() %>
+        <%= profile.name %> has been a <%= profile.trade %> for <%= profile.years %> years.   
         <% if (isSelf) { %>
           <form 
-            action="/profiles/cats/<%= cat._id %>?_method=DELETE"
+            action="/profiles/icons/<%= icon._id %>?_method=DELETE"
             method="POST"
             style="display: inline-block;"
           >
-            <button type="submit">😸 Free <%= cat.name %></button>
+            <button type="submit"> Free <%= profile.name %></button>
           </form>
         <% } %>
       </h3>
     <% }) %>
   <% } else { %>
-    <%# NO CATS FOR THIS PROFILE %>  
+    <%# NO ICONS FOR THIS PROFILE %>  
     <h2>
-      <%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any cats! 
+      <%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any icons! 
     </h2>
-  <% } %>
+  <% } %> -->
 </main>
 
 <%- include('../partials/footer') %>

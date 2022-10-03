@@ -4,7 +4,7 @@ function index(req, res) {
   Profile.find({})
   .then(profiles => {
     res.render("profiles/index", {
-      profiles,
+      profiles: profiles,
       title: "🚧"
     })
   })
@@ -35,8 +35,45 @@ function show(req, res) {
 }
 
 
+function createIcon(req, res) {
+  // could use req.params.id instead of req.user.profile._id
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    profile.icons.push(req.body)
+    profile.save()
+    .then(() => {
+      res.redirect(`/profiles/${req.user.profile._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect(`/profiles/${req.user.profile._id}`)
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect(`/profiles/${req.user.profile._id}`)
+  })
+}
+
+function deleteIcon(req, res) {
+  Profile.findById(req.user.profile._id)
+  .then(profile => {
+    profile.icons.remove({_id: req.params.id})
+    profile.save()
+    .then(() => {
+      res.redirect(`/profiles/${req.user.profile._id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect(`/profiles/${req.user.profile._id}`)
+    })
+  })
+}
+
 
 export {
   index,
   show,
+  createIcon,
+  deleteIcon,
 }
