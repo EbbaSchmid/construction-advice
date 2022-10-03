@@ -11,19 +11,19 @@ router.get('/', advicesCtrl.index)
 router.get('/:id', advicesCtrl.show)
 
 // GET localhost:3000/advices/:id/edit
-router.get('/:id/edit', isLoggedIn, advicesCtrl.edit)
+// router.get('/:id/edit', isLoggedIn, advicesCtrl.edit)
 
 // POST localhost:3000/advices
 router.post('/', isLoggedIn, advicesCtrl.create)
 
-// PATCH localhost:3000/tacos/:id/flip-tasty
-router.patch('/:id/flip-helpful', isLoggedIn, advicesCtrl.flipHelpful)
+// // PATCH localhost:3000/tacos/:id/flip-tasty
+// router.patch('/:id/flip-helpful', isLoggedIn, advicesCtrl.flipHelpful)
 
-// PUT localhost:3000/advices/:id
-router.put('/:id', isLoggedIn, advicesCtrl.update)
+// // PUT localhost:3000/advices/:id
+// router.put('/:id', isLoggedIn, advicesCtrl.update)
 
-// DELETE localhost:3000/advices/:id
-router.delete('/:id', isLoggedIn, advicesCtrl.delete)
+// // DELETE localhost:3000/advices/:id
+// router.delete('/:id', isLoggedIn, advicesCtrl.delete)
 
 export {
   router

@@ -4,8 +4,8 @@ const Schema = mongoose.Schema
 
 const adviceSchema = new Schema({
   // _id: ObjectId,
-  content: String,
-  author: { type: Schema.Types.ObjectId, ref: "Profile" },
+  text: String,
+  owner: { type: Schema.Types.ObjectId, ref: "Profile" },
   // ratings: [ratingSchema],
   tags: [String],
   helpful: Boolean

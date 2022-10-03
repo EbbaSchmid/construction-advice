@@ -1,16 +1,32 @@
 <%- include('../partials/html-head') %>
+<link rel="stylesheet" href="/stylesheets/flights/index.css" />
 <%- include('../partials/nav') %>
 
-<link rel="stylesheet" href="/stylesheets/style.css" />
+<!-- <section>
+  <h1> View of Advice</h1>
+
+  <ul>
+    <% advices.forEach(advice => { %>
+      <li>
+        <a href="/advices/<%= advice._id %>"><%= advice.text %></a>
+      </li>
+    <% }) %>
+  </ul>
+	
+</section> -->
 
 <section>
   <h1>We all have some sort of advice for people starting in the Construction Industry, share yours here:</h1>
   <% if (user) { %>
-    <h3>Add Advice!</h3>
-    <form action="/advices" method="POST">
+    <form id="new-form" action="/advices" method="POST">
       <label>
         Advice:
-        <input type="text" name="advice" value= "" maxlength = "200" autocomplete="off">
+        <input 
+        type="text" 
+        name="text"
+        value= "" 
+        maxlength = "200" 
+        autocomplete="off">
       </label>
         
         <label for="tags-input">Tags:</label>
@@ -24,9 +40,11 @@
         </select>
         <label>
           Helpful:
-          <input type="checkbox" name="helpful">
+          <input 
+          type="checkbox" 
+          name="helpful">
         </label>
-      <button type="submit">Add </button>
+      <button type="submit"> Add Advice</button>
     </form>
   <% } %>
 
@@ -34,7 +52,7 @@
   <ul>
     <% advices.forEach(advice => { %>
       <li>
-        <a href="/advices/<%= advice._id %>"><%= advice.name %></a>
+        <a href="/advices/<%= advice._id %>"><%= advice.text %></a>
         is <%= advice.helpful ? 'helpful' : 'not helpful' %></li>
     <% }) %>
   
