@@ -27,7 +27,8 @@ a:link {
 }
 
 a:visited {
-  color:#F1D302;
+  color:#42ee2f;
+  font-weight: bold;
 }
 
 a:active {

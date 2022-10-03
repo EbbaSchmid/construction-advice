@@ -44,7 +44,7 @@
             method="POST"
             style="display: inline-block;"
           >
-            <button type="submit"> Free <%= profile.name %></button>
+            <button type="submit"> Redo <%= profile.name %></button>
           </form>
         <% } %>
       </h3>
@@ -54,7 +54,7 @@
     <h2>
       <%= isSelf ? "You don't" : `${profile.name} doesn't` %> have any icons! 
     </h2>
-  <% } %> -->
+  <% } %>
 </main>
 
 <%- include('../partials/footer') %>

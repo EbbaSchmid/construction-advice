@@ -36,7 +36,6 @@ function show(req, res) {
 
 
 function createIcon(req, res) {
-  // could use req.params.id instead of req.user.profile._id
   Profile.findById(req.user.profile._id)
   .then(profile => {
     profile.icons.push(req.body)
