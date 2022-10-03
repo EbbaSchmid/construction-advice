@@ -16,6 +16,7 @@ function index(req, res) {
 
 function create(req, res) {
   req.body.owner = req.user.profile._id
+  req.body.helpful = !!req.body.helpful
   console.log(req.body)
   Advice.create(req.body)
   .then(advice => {
@@ -31,10 +32,25 @@ function show(req, res) {
   Advice.findById(req.params.id)
   .populate('owner')
   .then(advice => {
-    console.log(taco);
+    console.log(advice);
     res.render('advices/show', {
       advice,
       title: "📐 show"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/advices')
+  })
+}
+
+function flipHelpful(req, res) {
+  Advice.findById(req.params.id)
+  .then(advice => {
+    advice.helpful = !advice.helpful
+    advice.save()
+    .then(() => {
+      res.redirect(`/advices/${req.params.id}`)
     })
   })
   .catch(err => {
@@ -61,6 +77,7 @@ function update(req, res) {
   Advice.findById(req.params.id)
   .then(advice => {
     if (advice.owner.equals(req.user.profile._id)){
+      req.body.helpful = !!req.body.helpful
       advice.updateOne(req.body)
       .then(updatedAdvice => {
         res.redirect(`/advices/${advice._id}`)
@@ -97,6 +114,7 @@ export {
   index,
   create,
   show,
+  flipHelpful,
   edit,
   update,
   deleteAdvice as delete,

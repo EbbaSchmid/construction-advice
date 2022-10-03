@@ -16,8 +16,8 @@ router.get('/:id/edit', isLoggedIn, advicesCtrl.edit)
 // POST localhost:3000/advices
 router.post('/', isLoggedIn, advicesCtrl.create)
 
-// // PATCH localhost:3000/tacos/:id/flip-tasty
-// router.patch('/:id/helpful-advice', isLoggedIn, advicesCtrl.helpfulAdvice)
+// PATCH localhost:3000/tacos/:id/flip-tasty
+router.patch('/:id/flip-helpful', isLoggedIn, advicesCtrl.flipHelpful)
 
 // PUT localhost:3000/advices/:id
 router.put('/:id', isLoggedIn, advicesCtrl.update)
