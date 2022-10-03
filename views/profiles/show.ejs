@@ -6,44 +6,58 @@
     <img
       class="profile-avatar"
       src="<%= profile.avatar %>" 
-      alt="<%= profile.name %>'s avatar"
-    >
+      alt="<%= profile.name %>'s avatar">
   </div>
+
   <%# isSelf replaces profile._id.equals(user.profile._id) %> 
   <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
   <% if (isSelf) { %>
-    <h2>Add an icon!</h2>
+    <h2>Add a Bio!</h2>
     <form action="/profiles/<%= profile._id %>/icons" method="POST">
       <label>
         Name:
-        <input type="text" name="name" autocomplete="off">
+        <input 
+        type="text" 
+        name="name" 
+        autocomplete="off">
       </label>
+
       <label>
         Trade:
-        <input type="text" name="trade" autocomplete="off">
+        <input 
+        type="text" 
+        name="trade" 
+        autocomplete="off">
       </label>
+
       <label>
         Years of Experience:
-        <input type="number" name="years" autocomplete="off">
+        <input 
+        type="number" 
+        name="years" 
+        autocomplete="off">
       </label>
+
       <button type="submit">Add</button>
     </form>
+
   <% } %>
   <% if (profile.icons.length) { %>
     <%# THERE ARE ICONS FOR THIS PROFILE %> 
     <h2>
-      <%= isSelf ? "You have" : `${profile.name} has` %> icons! Here they are! 
+      <%= isSelf ? "Here is your Bio" : `${profile.name} has` %>  
     </h2>
     <% profile.icons.forEach(icon => { %>
       <h3>
         <%= getRandomIcon() %>
         <%= profile.name %> has been a <%= profile.trade %> for <%= profile.years %> years.   
         <% if (isSelf) { %>
+          
           <form 
             action="/profiles/icons/<%= icon._id %>?_method=DELETE"
             method="POST"
-            style="display: inline-block;"
-          >
+            style="display: inline-block;">
+
             <button type="submit"> Redo <%= profile.name %></button>
           </form>
         <% } %>
