@@ -5,17 +5,14 @@
 <body>
   <nav>
     
-      <button id="adviceBtn">Advice</button>
+      <button id="adviceBtn" a href="/advices">Advice</button>
 
-      <button id="editAdviceBtn">Edit My Advice</button>
+      <button id="editAdviceBtn" a href="/editAdvices">Edit My Advice</button>
     
-      
-
-    <% if (user) { %>
-      <a href="/auth/logout" class="right">
-        <button type="submit">Logout</button>
-      </a>
-    <% } else { %>
+    
+      <% if (user) { %>
+        <a href="/auth/logout">Logout</a>
+      <% } else { %>
       <div 
         id="g_id_onload"
         data-client_id="<%= googleClientID %>"

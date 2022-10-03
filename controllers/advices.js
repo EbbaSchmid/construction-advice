@@ -4,7 +4,7 @@ function index(req, res) {
   Advice.find({})
   .then(advices => {
     res.render('advices/index', {
-      advices,
+      advices: advices,
       title: "📐"
     })
   })
