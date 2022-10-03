@@ -16,18 +16,20 @@
 </section> -->
 
 <section>
-  <h1>We all have some sort of advice for people starting in the Construction Industry, share yours here:</h1>
+  <h1>Share Advice:</h1>
   <% if (user) { %>
+    
     <form id="new-form" action="/advices" method="POST">
       <label>
         Advice:
-        <input 
+        <input id = adviceInput
         type="text" 
         name="text"
         value= "" 
         maxlength = "200" 
         autocomplete="off">
       </label>
+  
         
         <label for="tags-input">Tags:</label>
         <select name="tags">

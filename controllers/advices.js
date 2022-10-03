@@ -1,7 +1,7 @@
 import { Advice } from '../models/advice.js'
 
 function newAdvice(req, res) {
-  res.render('/advices/new', {
+  res.render('advices/new', {
     title: 'Add Advice!'
   })
 }
@@ -9,7 +9,7 @@ function newAdvice(req, res) {
 function index(req, res) {
   Advice.find({})
   .then(advices => {
-    res.render('advices', {
+    res.render('advices/index', {
       advices: advices,
       title: "Add Advice! 📐"
     })
