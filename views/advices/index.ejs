@@ -10,10 +10,17 @@
         Advice:
         <input type="text" name="name" value= "" maxlength = "200" autocomplete="off">
       </label>
-      <label>
-        Tags:
-        <input type="checkbox" name="tags">
-      </label>
+        
+        <label for="tags-input">Tags:</label>
+        <select name="tags">
+          <option value="Weather">Weather</option>
+          <option value="Hygiene">Hygiene</option>
+          <option value="Physical Health">Physical Health</option>
+          <option value="Tools">Tools</option>
+          <option value="Apprentice-Tip">Apprentice Tip</option>
+          <option value="Journeymen-Tip">Journeymen Tip</option>
+        </select>
+
       <button type="submit">Add </button>
     </form>
   <% } %>
