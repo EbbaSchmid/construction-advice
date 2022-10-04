@@ -18,7 +18,7 @@
 
   <% if (advice.owner.equals(user?.profile._id)) { %>
     <a href="/advices/<%= advice._id %>/edit">
-      <button class="btn">Edit Advice</button>
+      <button class="editBtn">Edit Advice</button>
     </a>
     <form action="/advices/<%= advice._id %>?_method=DELETE" method="POST">
       <button class="btn" type="submit">Delete Advice</button>

@@ -72,7 +72,7 @@ function edit(req, res) {
 }
 
 function update(req, res) {
-  Advice.findByIdAndUpdate(req.params.id)
+  Advice.findById(req.params.id)
   .then(advice => {
     if (advice.owner.equals(req.user.profile._id)){
       req.body.helpful = !!req.body.helpful
