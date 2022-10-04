@@ -23,6 +23,7 @@ import { router as indexRouter } from './routes/index.js'
 import { router as authRouter } from './routes/auth.js'
 import { router as advicesRouter } from './routes/advices.js'
 import { router as profilesRouter } from './routes/profiles.js'
+import { router as ratingsRouter } from './routes/ratings.js'
 
 // create the express app
 const app = express()

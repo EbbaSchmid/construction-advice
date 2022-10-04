@@ -1,14 +1,27 @@
 import { Router } from 'express'
+import passport from 'passport'
+import * as ratingsCtrl from '../controllers/ratings.js'
 import { isLoggedIn } from '../middleware/middleware.js'
-import * as profilesCtrl from '../controllers/profiles.js'
 
 const router = Router()
 
+// GET localhost:3000/ratings
 router.get('/', isLoggedIn, ratingsCtrl.index)
-router.get('/:id', isLoggedIn, ratingsCtrl.show)
-router.post('/:id/icons', isLoggedIn, ratingsCtrl.createRating)
-router.delete('/icons/:id', isLoggedIn, ratingsCtrl.deleteRating)
 
+// GET localhost:3000/ratings/:id
+router.get('/:id', ratingsCtrl.show)
+
+// GET localhost:3000/ratings/:id/edit
+router.get('/:id/edit', isLoggedIn, ratingsCtrl.edit)
+
+// POST localhost:3000/ratings
+router.post('/', isLoggedIn, ratingsCtrl.create)
+
+// PUT localhost:3000/ratings/:id
+router.put('/:id', isLoggedIn, ratingsCtrl.update)
+
+// DELETE localhost:3000/ratings/:id
+router.delete('/:id', isLoggedIn, ratingsCtrl.delete)
 
 export {
   router

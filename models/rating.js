@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 
 const ratingSchema = new mongoose.Schema({
   score: Number,
-  Profile: { type: Schema.Types.ObjectId, ref: "Profile" },
+  owner: { type: Schema.Types.ObjectId, ref: "Profile" },
 }, {
   timestamps: true
 })
