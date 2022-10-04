@@ -16,7 +16,9 @@ const iconSchema = new Schema({
 const profileSchema = new Schema({
   name: String,
   avatar: String,
-  icons: [iconSchema]
+  icons: [iconSchema],
+  advices: [{ type: Schema.Types.ObjectId, ref: 'Advice' }],
+  ratings: [{ type: Schema.Types.ObjectId, ref: 'Rating' }],
 }, {
   timestamps: true
 })

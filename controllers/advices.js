@@ -76,7 +76,7 @@ function update(req, res) {
   Advice.findById(req.params.id)
   .then(advice => {
     if (advice.owner.equals(req.user.profile._id)){
-      req.body.helpful = !!req.body.helpful
+      req.body.helpful = !!req.body.helpful 
       advice.updateOne(req.body)
       .then(updatedAdvice => {
         console.log(updatedAdvice)
