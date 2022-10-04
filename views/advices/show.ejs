@@ -3,7 +3,7 @@
 
 <section>
   <p>Advice from <%= advice.owner ? advice.owner.name : "Unknown"%>...</p>
-  <h1><%= advice.name %></h1>
+  <h1><%= advice.text %></h1>
   <h2>This advice is <%= advice.helpful ? 'Helpful!' : 'Not helpful' %></h2>
   <% if (user) { %>
     <form
@@ -15,7 +15,7 @@
       </button>
     </form>
   <% } %>
-  
+
   <% if (advice.owner.equals(user?.profile._id)) { %>
     <a href="/advices/<%= advice._id %>/edit">
       <button class="btn">Edit Advice</button>
