@@ -69,7 +69,7 @@
     <% profile.icons.forEach(icon => { %>
       <h3>
         <%= getRandomIcon() %>
-        <%= profile.name %> has been a <%= profile.trade %> for <%= profile.years %> years. They are  currently living in <%= profile.location %> and are a member of Local <%= profile.local %>.
+        <%= profile.name %> has been a <%= icon.trade %> for <%= icon.years %> years. They are  currently living in <%= icon.location %> and are a member of Local <%= icon.local %>.
         <% if (isSelf) { %>
           
           <form 

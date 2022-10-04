@@ -72,13 +72,13 @@ function edit(req, res) {
 }
 
 function update(req, res) {
-  Advice.findById(req.params.id)
+  Advice.findByIdAndUpdate(req.params.id)
   .then(advice => {
     if (advice.owner.equals(req.user.profile._id)){
       req.body.helpful = !!req.body.helpful
       advice.updateOne(req.body)
       .then(updatedAdvice => {
-        res.redirect(`/advices/${advice._id}`)
+        res.redirect(`/advices`)
       })
     } else {
       throw new Error('NOT AUTHORIZED')

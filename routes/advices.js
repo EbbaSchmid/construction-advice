@@ -1,11 +1,12 @@
 import { Router } from 'express'
+import passport from 'passport'
 import * as advicesCtrl from '../controllers/advices.js'
 import { isLoggedIn } from '../middleware/middleware.js'
 
 const router = Router()
 
 // GET localhost:3000/advices
-router.get('/', advicesCtrl.index)
+router.get('/', isLoggedIn, advicesCtrl.index)
 
 // GET localhost:3000/advices/:id
 router.get('/:id', advicesCtrl.show)
