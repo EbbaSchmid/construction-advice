@@ -1,5 +1,15 @@
 import { Rating } from '../models/rating.js'
 
-Rating.create({score: "" , owner: ""}, function(err, ratingController) {
-  console.log(ratingController)
-})
+function index(req, res) {
+  Rating.find({})
+  .then(ratings => {
+    res.render('ratings/index', {
+      advices: advices,
+      title: "Add Rating! 📐"
+    })
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/')
+  })
+}
