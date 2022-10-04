@@ -38,14 +38,11 @@
 
 
 
-
-  <h2>This advice is <%= advice.helpful ? 'Helpful!' : 'Not helpful' %></h2>
   <% if (user) { %>
     <form
-      action="/advices/<%= advice._id %>/flip-helpful?_method=PATCH"
+      action="/advices/<%= advice._id %>/rating?_method=PATCH"
       method="POST">
-      <button class="btn" type="submit">
-        Mark advice <%= advice.helpful ? 'not helpful' : 'helpful' %> 
+      <button class="btn" type="submit"> 
       </button>
     </form>
   <% } %>

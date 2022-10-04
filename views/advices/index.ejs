@@ -27,13 +27,6 @@
           <option value="Journeymen-Tip">Journeymen Tip</option>
         </select>
 
-        <label>
-          Helpful:
-          <input 
-          type="checkbox" 
-          name="helpful">
-        </label>
-
       <button type="submit"> Add Advice</button>
     </form>
   <% } %>
@@ -43,7 +36,7 @@
     <% advices.forEach(advice => { %>
       <li>
         <a href="/advices/<%= advice._id %>"><%= advice.text %></a>
-        is <%= advice.helpful ? 'helpful' : 'not helpful' %></li>
+        is rated  <%= advice.rating %></li>
     <% }) %>
   
   </ul>

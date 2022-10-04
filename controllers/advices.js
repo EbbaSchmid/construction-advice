@@ -42,20 +42,7 @@ function show(req, res) {
   })
 }
 
-function flipHelpful(req, res) {
-  Advice.findById(req.params.id)
-  .then(advice => {
-    advice.helpful = !advice.helpful
-    advice.save()
-    .then(() => {
-      res.redirect(`/advices/${req.params.id}`)
-    })
-  })
-  .catch(err => {
-    console.log(err)
-    res.redirect('/advices')
-  })
-}
+
 
 function edit(req, res) {
   Advice.findById(req.params.id)
@@ -111,17 +98,32 @@ function deleteAdvice(req, res) {
   })
 }
 
-function createRating(req, res) {
-  req.body.owner = req.user.profile._id
-  Rating.create(req.body)
+function rating(req, res) {
+  rating.findById(req.params.id)
   .then(rating => {
-    res.redirect('/advices')
+    rating.save()
+    .then(() => {
+      res.redirect(`/advices/${req.params.id}`)
+    })
   })
   .catch(err => {
     console.log(err)
     res.redirect('/advices')
   })
 }
+
+// function createRating(req, res) {
+//   console.log("rating", req.body)
+//   // req.body.owner = req.user.profile._id
+//   Rating.create(req.body)
+//   .then(rating => {
+//     res.redirect('/advices')
+//   })
+//   .catch(err => {
+//     console.log(err)
+//     res.redirect('/advices')
+//   })
+// }
 
 // function deleteRating(req, res) {
 //   Rating.findById(req.params.id)
@@ -147,10 +149,8 @@ export {
   index,
   create,
   show,
-  flipHelpful,
   edit,
   update,
   deleteAdvice as delete,
-  createRating,
-  // deleteRating as delete,
+  rating,
 }
