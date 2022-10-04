@@ -18,3 +18,8 @@ Get started by creating a Profile!
 
 -Mary Church Terrell (1863-1954) 
 Suffragist and Civil Rights Champion
+
+----------------------
+ Technology Used & Sources: 
+ 
+ Modified Star Rating CSS from https://github.com/mukulkant/Star-rating-using-pure-css 

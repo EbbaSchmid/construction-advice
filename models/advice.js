@@ -2,6 +2,14 @@ import mongoose from 'mongoose'
 
 const Schema = mongoose.Schema
 
+const ratingSchema = new Schema({
+  owner: { type: Schema.Types.ObjectId, ref: "Profile" },
+  rating: Number,
+}, {
+  timestamps: true
+})
+
+
 const adviceSchema = new Schema({
   text: String,
   owner: { type: Schema.Types.ObjectId, ref: "Profile" },
@@ -11,6 +19,7 @@ const adviceSchema = new Schema({
 }, {
   timestamps: true
 })
+
 
 const Advice = mongoose.model('Advice', adviceSchema)
 

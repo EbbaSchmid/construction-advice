@@ -111,6 +111,38 @@ function deleteAdvice(req, res) {
   })
 }
 
+function createRating(req, res) {
+  req.body.owner = req.user.profile._id
+  Rating.create(req.body)
+  .then(rating => {
+    res.redirect('/advices')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/advices')
+  })
+}
+
+// function deleteRating(req, res) {
+//   Rating.findById(req.params.id)
+//   .then(rating => {
+//     if (rating.owner.equals(req.user.profile._id)){
+//       rating.delete()
+//       .then(deletedRating => {
+//         res.redirect(`/advices`)
+//       })
+//     } else {
+//       throw new Error('NOT AUTHORIZED')
+//     }
+//   })
+//   .catch(err => {
+//     console.log(err)
+//     res.redirect('/advices')
+//   })
+// }
+
+
+
 export {
   index,
   create,
@@ -119,4 +151,6 @@ export {
   edit,
   update,
   deleteAdvice as delete,
+  createRating,
+  // deleteRating as delete,
 }
