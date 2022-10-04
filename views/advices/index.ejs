@@ -16,7 +16,7 @@
         autocomplete="off">
       </label>
   
-        
+        <br>
         <label for="tags-input">Tags:</label>
         <select name="tags">
           <option value="Weather">Weather</option>
@@ -27,7 +27,7 @@
           <option value="Journeymen-Tip">Journeymen Tip</option>
         </select>
 
-      <button type="submit"> Add Advice</button>
+      <button id ="addAdviceBtn" type="submit"> Add Advice</button>
     </form>
   <% } %>
 <br>
@@ -36,7 +36,7 @@
     <% advices.forEach(advice => { %>
       <li>
         <a href="/advices/<%= advice._id %>"><%= advice.text %></a>
-        is rated  <%= advice.rating %></li>
+        is rated  <%= advice.radio %></li>
     <% }) %>
   
   </ul>
