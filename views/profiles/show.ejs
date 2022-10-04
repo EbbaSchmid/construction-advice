@@ -1,6 +1,7 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
+<section id ="selfProfileSection">
 <main>
   <div>
     <img
@@ -12,7 +13,6 @@
   <%# isSelf replaces profile._id.equals(user.profile._id) %> 
   <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
   <% if (isSelf) { %>
-    <h2>Add a Bio!</h2>
     <form action="/profiles/<%= profile._id %>/icons" method="POST">
       <label>
         Name:
@@ -57,14 +57,14 @@
     </label>
 
       <br>
-      <button type="submit">Add</button>
+      <button id ="bioAddBtn" type="submit">Add your Bio</button>
     </form>
 
   <% } %>
   <% if (profile.icons.length) { %>
     <%# THERE ARE ICONS FOR THIS PROFILE %> 
     <h2>
-      <%= isSelf ? "Here is your Bio" : `${profile.name}'s Bio:` %>  
+      <%= isSelf ? "Here is your Bio:" : `${profile.name}'s Bio:` %>  
     </h2>
     <% profile.icons.forEach(icon => { %>
       <h3>
@@ -77,10 +77,12 @@
             method="POST"
             style="display: inline-block;">
 
-            <button type="submit"> Redo Bio for <%= profile.name %></button>
+            <br>
+            <button id ="bioSubmitBtn" type="submit">Redo Bio for <%= profile.name %></button>
           </form>
         <% } %>
       </h3>
+      <br>
     <% }) %>
   <% } else { %>
     <%# NO ICONS FOR THIS PROFILE %>  
@@ -89,5 +91,5 @@
     </h2>
   <% } %>
 </main>
-
+</section>
 <%- include('../partials/footer') %>

@@ -132,6 +132,36 @@ footer {
   
 }
 
+/* Profile CSS */
+
+#bioSubmitBtn {
+  background-color: #5C6B73;
+  color: #F1D302;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  justify-items: center;
+  width: 300px;
+  height: 50px;
+  font-size: 28px;
+}
+
+#bioAddBtn {
+  background-color: #5C6B73;
+  color: #F1D302;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  justify-items: center;
+  width: 200px;
+  height: 50px;
+  font-size: 28px;
+  margin: 30px 0px 30px 0px;
+}
+
+#selfProfileSection {
+  margin-left: 30px;
+}
 
 
 
