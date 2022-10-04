@@ -4,6 +4,8 @@
 <section>
   <p>Advice from <%= advice.owner ? advice.owner.name : "Unknown"%>...</p>
   <h1><%= advice.text %></h1>
+  <p> Selected Advice Topic Tag:</p>
+  <h1><%= advice.tags %></h1>
   <h2>This advice is <%= advice.helpful ? 'Helpful!' : 'Not helpful' %></h2>
   <% if (user) { %>
     <form
