@@ -6,7 +6,8 @@ const adviceSchema = new Schema({
   text: String,
   owner: { type: Schema.Types.ObjectId, ref: "Profile" },
   tags: [String],
-  helpful: Boolean
+  helpful: Boolean,
+  ratings: { type: Schema.Types.ObjectId, ref: "Rating" },
 }, {
   timestamps: true
 })

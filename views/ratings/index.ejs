@@ -4,7 +4,6 @@
 <section>
   <section>
     <h1>Rate Advice!</h1>
-    <form action="/advices/<%= advice._id %>?_method=PUT" method="POST">
       
       <meta charset="UTF-8">
       <link rel="stylesheet" type="text/css" href="style.css">
@@ -25,18 +24,9 @@
         <label for="star1" title="text">1 star</label>
       </div>
     </body>
-      <button type="submit">Edit Advice</button>
+      <button type="submit">Edit Rating</button>
     </form>
   </section>
-
-  <h2>All the Advice!</h2>
-  <ul>
-    <% advices.forEach(advice => { %>
-      <li>
-        <a href="/advices/<%= advice._id %>"><%= advice.text %></a>
-        is <%= advice.helpful ? 'helpful' : 'not helpful' %></li>
-    <% }) %>
-  
   </ul>
 </section>
 
