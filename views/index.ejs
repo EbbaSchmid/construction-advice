@@ -2,9 +2,9 @@
 <%- include('./partials/nav') %>
 
 <main>
-  <h1>Welcome <%= user ? user.profile.name : "Tradie!" %></h1>
+  <h1 id="welcomeText">Welcome <%= user ? user.profile.name : "Tradie!" %></h1>
   <% if (user?.profile.avatar) { %>
-    <div>
+    <div id="profileAvatar">
       <img
         src="<%= user.profile.avatar %>"
         alt="<%= user.profile.name %> avatar"
@@ -12,7 +12,7 @@
     </div>
   <% } %>
 
-  <p id="intro-text">
+  <p id="introTextIndex">
     This tracker is used to offer tips & tricks for those in the Construction industry. 
     <br>
     <br>

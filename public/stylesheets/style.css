@@ -35,13 +35,22 @@ a:active {
 color:#F1D302;
 }
 
-#intro-text {
+#welcomeText{
+  margin: 30px 0px 30px 30px;
+}
+
+#introTextIndex {
   display: flex;
   column-count: 2;
   flex-direction: column;
   color:#F1D302;
   font-size: 20px;
   font-family: Roboto;
+  margin: 30px 0px 30px 30px;
+}
+
+#profileAvatar{
+  margin: 0px 0px 0px 70px;
 }
 
 nav {
@@ -175,12 +184,16 @@ nav {
   align-items: center;
 }
 
-
-
 #adviceInput {
   color:black;
   font-size: 20px;
   border-radius: 20px;
+}
+
+#tagsAdviceIndexInput{
+  border-radius: 20px;
+  color:black;
+  font-size: 20px;
 }
 
 main {
@@ -197,8 +210,9 @@ main {
   justify-content: center;
   text-align: center;
   justify-items: center;
-
 }
+
+
 
 input[type=text] {
   padding:10px;
@@ -227,6 +241,7 @@ footer {
   justify-content: center;
   text-align: center;
   justify-items: center;
+  border-radius: 20px;
   width: 300px;
   height: 50px;
   font-size: 28px;
@@ -239,6 +254,7 @@ footer {
   justify-content: center;
   text-align: center;
   justify-items: center;
+  border-radius: 20px;
   width: 200px;
   height: 50px;
   font-size: 28px;
@@ -249,6 +265,29 @@ footer {
   margin-left: 30px;
 }
 
+#bioNameInput {
+  border-radius: 20px;
+}
+
+#bioTradeInput {
+  border-radius: 20px;
+}
+
+#bioLocationInput{
+  border-radius: 20px;
+}
+
+#bioYearsInput{
+  border-radius: 20px;
+}
+
+#bioLocalInput{
+  border-radius: 20px;
+}
+
+#profileShowAvatar{
+  margin: 30px 0px 10px 0px;
+}
 
 
 /* Star Rating Radio CSS Code Below */

@@ -4,7 +4,7 @@
 <section id ="selfProfileSection">
 <main>
   <div>
-    <img
+    <img id="profileShowAvatar"
       class="profile-avatar"
       src="<%= profile.avatar %>" 
       alt="<%= profile.name %>'s avatar">
@@ -13,10 +13,11 @@
   <%# isSelf replaces profile._id.equals(user.profile._id) %> 
   <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
   <% if (isSelf) { %>
-    <form action="/profiles/<%= profile._id %>/icons" method="POST">
+    <form 
+    action="/profiles/<%= profile._id %>/icons" method="POST">
       <label>
         Name:
-        <input 
+        <input id="bioNameInput"
         type="text" 
         name="name" 
         autocomplete="off">
@@ -24,7 +25,7 @@
 
       <label>
         Trade:
-        <input 
+        <input id="bioTradeInput"
         type="text" 
         name="trade" 
         autocomplete="off">
@@ -32,17 +33,16 @@
 
       <label>
         Years of Experience:
-        <input 
+        <input id="bioYearsInput"
         type="number" 
         name="years" 
         autocomplete="off">
       </label>
 
       <br>
-
     <label>
       Current Location:
-      <input 
+      <input id="bioLocationInput"
       type="text" 
       name="location" 
       autocomplete="off">
@@ -50,7 +50,7 @@
 
     <label>
       Are you in the Union, if so, what Local:
-      <input 
+      <input id="bioLocalInput"
       type="number" 
       name="local" 
       autocomplete="off">
