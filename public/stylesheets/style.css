@@ -194,7 +194,7 @@ footer {
   content: '★ ';
 }
 .rate > input:checked ~ label {
-  color: #ffc700;    
+  color: #F1D302;    
 }
 .rate:not(:checked) > label:hover,
 .rate:not(:checked) > label:hover ~ label {
@@ -205,6 +205,18 @@ footer {
 .rate > input:checked ~ label:hover,
 .rate > input:checked ~ label:hover ~ label,
 .rate > label:hover ~ input:checked ~ label {
-  color: #c59b08;
+  color: #42ee2f;
 }
 
+#ratingBtn {
+  background-color: #5C6B73;
+  color: #F1D302;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  justify-items: center;
+  width: 200px;
+  height: 50px;
+  font-size: 28px;
+  margin: 30px 0px 30px 0px;
+}

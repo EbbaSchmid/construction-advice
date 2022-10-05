@@ -32,7 +32,8 @@ function show(req, res) {
   .then(advice => {
     res.render('advices/show', {
       advice: advice,
-      title: "📐 Advice Details"
+    
+      title: " Advice Details 📐"
     })
   })
   .catch(err => {
@@ -48,7 +49,7 @@ function edit(req, res) {
   .then(advice => {
     res.render('advices/edit', {
       advice: advice,
-      title: "Edit Advice 📐"
+      title: " Edit Advice 📐"
     })
   })
   .catch(err => {
@@ -111,20 +112,26 @@ function rating(req, res) {
 }
 
 function createRating(req, res) {
-  console.log("rating", req.body)
-  // req.body.owner = req.user.profile._id
-  Rating.create(req.body)
-  .then(rating => {
-    res.redirect('/advices')
+  Advice.findById(req.user.advice._id)
+  .then(advice => {
+    advice.ratings.push(req.body)
+    advice.save()
+    .then(() => {
+      res.redirect(`/advices/${req.params.id}`)
+    })
+    .catch(err => {
+      console.log(err)
+      res.redirect(`/advices/${req.params.id}`)
+    })
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/advices')
+    res.redirect(`/advices/${req.params.id}`)
   })
 }
 
 function updateRating(req, res) {
-  Rating.findById(req.params.id)
+  Advice.findById(req.params.id)
   .then(rating => {
     if (advice.owner.equals(req.user.profile._id)){
       rating.updateOne(req.body)
@@ -135,7 +142,6 @@ function updateRating(req, res) {
     } else {
       throw new Error('NOT AUTHORIZED')
     }
-    
   })
   .catch(err => {
     console.log(err)

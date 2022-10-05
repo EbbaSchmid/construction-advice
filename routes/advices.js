@@ -23,8 +23,8 @@ router.put('/:id', isLoggedIn, advicesCtrl.update)
 // DELETE localhost:3000/advices/:id
 router.delete('/:id', isLoggedIn, advicesCtrl.delete)
 
-// router.post('/:id/advices', isLoggedIn, advicesCtrl.createRating)
-// router.delete('/advices/:id', isLoggedIn, profilesCtrl.deleteRating)
+router.post('/:id/advices', isLoggedIn, advicesCtrl.createRating)
+router.delete('/advices/:id', isLoggedIn, advicesCtrl.updateRating)
 
 // // PATCH localhost:3000/advices/:id/rating
 router.patch('/:id/rating', isLoggedIn, advicesCtrl.rating)
