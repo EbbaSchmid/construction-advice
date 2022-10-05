@@ -92,6 +92,90 @@ nav {
   font-size: 28px;
 }
 
+#addAdviceBtn {
+  background-color: #5C6B73;
+  color: #F1D302;
+  border-radius: 20px;
+  width: 110px;
+  height: 35px;
+  font-size: 18px;
+}
+
+#editAdviceBtn {
+  background-color: #5C6B73;
+  color: #F1D302;
+  border-radius: 20px;
+  width: 110px;
+  height: 35px;
+  font-size: 18px;
+}
+
+#showEditBtn {
+  background-color: #5C6B73;
+  color: #F1D302;
+  border-radius: 20px;
+  width: 110px;
+  height: 35px;
+  font-size: 18px;
+  justify-content: center;
+  
+}
+
+#showRatingBtn {
+  background-color: #5C6B73;
+  color: #F1D302;
+  border-radius: 20px;
+  width: 140px;
+  height: 40px;
+  font-size: 18px;
+  justify-content: center;
+}
+
+#showDeleteBtn {
+  background-color: #5C6B73;
+  color: #F1D302;
+  border-radius: 20px;
+  width: 125px;
+  height: 40px;
+  font-size: 18px;
+  justify-content: center;
+}
+
+#showAdviceEjs{
+  margin: 30px 0px 30px 30px;
+}
+
+#adviceIntroFrom{
+  font-size: 32px;
+  background-color: #5C6B73;
+  width: 300px;
+}
+
+#adviceText {
+  font-size: 28px;
+}
+
+#adviceIndexText {
+  font-size: 22px;
+}
+
+#topicTagText {
+  font-size: 24px;
+  background-color: #5C6B73;
+  width: 300px;
+}
+
+#tagText{
+  font-size: 20px;
+}
+
+.showBtns {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+
 
 #adviceInput {
   color:black;

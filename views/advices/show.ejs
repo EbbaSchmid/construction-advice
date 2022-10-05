@@ -1,15 +1,19 @@
 <%- include('../partials/html-head') %>
 <%- include('../partials/nav') %>
 
-<section>
-  <p>Advice from <%= advice.owner ? advice.owner.name : "Unknown"%>...</p>
-  <h1><%= advice.text %></h1>
-  <p> Selected Advice Topic Tag:</p>
-  <h1><%= advice.tags %></h1>
-
+<section id ="showAdviceEjs">
+  <p id="adviceIntroFrom">Advice from <%= advice.owner ? advice.owner.name : "Unknown"%>...</p>
+  <br>
+  <p id="adviceText"><%= advice.text %></p>
+  <br>
+  <p id="topicTagText"> Selected Advice Topic Tag:</p>
+  <br>
+  <p id="tagText"><%= advice.tags %></p>
+<br>
+<br>
   <section>
     <section>
-      <h1>Rate the Advice!</h1>
+      
         
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="style.css">
@@ -30,7 +34,8 @@
           <label for="star1" title="text">1 star</label>
         </div>
       </body>
-      <button class ="ratingBtn" type="submit">Rate this Advice</button>
+    
+      <button id ="showRatingBtn" class ="showBtns" type="submit">Rate this Advice</button>
       </form>
     </section>
     </ul>
@@ -39,20 +44,20 @@
 
 
   <% if (user) { %>
-    <form
+    <!-- <form
       action="/advices/<%= advice._id %>/rating?_method=PATCH"
       method="POST">
-      <button class="btn" type="submit"> 
-      </button>
-    </form>
+      <button id ="show" class="btn" type="submit"> </button>
+    </form> -->
   <% } %>
 
   <% if (advice.owner.equals(user?.profile._id)) { %>
     <a href="/advices/<%= advice._id %>/edit">
-      <button class="editBtn">Edit Advice</button>
+      <button id ="showEditBtn" class="showBtns">Edit Advice</button>
     </a>
+    <br>
     <form action="/advices/<%= advice._id %>?_method=DELETE" method="POST">
-      <button class="btn" type="submit">Delete Advice</button>
+      <button id ="showDeleteBtn" class="showBtns" type="submit">Delete Advice</button>
     </form>
   <% } %>
 </section>

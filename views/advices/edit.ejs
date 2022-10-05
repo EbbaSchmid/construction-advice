@@ -2,7 +2,7 @@
 <%- include('../partials/nav') %>
 
 <section>
-  <h1>Edit Advice!</h1>
+  <h1>Edit Your Advice:</h1>
   <form action="/advices/<%= advice._id %>?_method=PUT" method="POST">
     
     <label>
@@ -26,16 +26,7 @@
     </select>
 
 
-
-    <label>
-      Helpful:
-      <input 
-        type="checkbox" 
-        name="helpful"
-        <%= advice.helpful ? "checked" : "" %> 
-      >
-    </label>
-    <button type="submit">Edit Advice</button>
+    <button id ="editAdviceBtn" type="submit">Edit Advice</button>
   </form>
 </section>
 

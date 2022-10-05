@@ -42,8 +42,6 @@ function show(req, res) {
   })
 }
 
-
-
 function edit(req, res) {
   Advice.findById(req.params.id)
   .then(advice => {

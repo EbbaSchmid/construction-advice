@@ -31,11 +31,11 @@
     </form>
   <% } %>
 <br>
-  <h2>All the Advice!</h2>
+  <h2>Everyone's Advice:</h2>
   <ul>
     <% advices.forEach(advice => { %>
       <li>
-        <a href="/advices/<%= advice._id %>"><%= advice.text %></a>
+        <a id="adviceIndexText" href="/advices/<%= advice._id %>"><%= advice.text %></a>
         is rated  <%= advice.ratings %></li>
     <% }) %>
   
