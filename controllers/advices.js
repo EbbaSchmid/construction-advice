@@ -16,7 +16,6 @@ function index(req, res) {
 
 function create(req, res) {
   req.body.owner = req.user.profile._id
-  req.body.helpful = !!req.body.helpful
   Advice.create(req.body)
   .then(advice => {
     res.redirect('/advices')
@@ -63,7 +62,6 @@ function update(req, res) {
   Advice.findById(req.params.id)
   .then(advice => {
     if (advice.owner.equals(req.user.profile._id)){
-      req.body.helpful = !!req.body.helpful 
       advice.updateOne(req.body)
       .then(updatedAdvice => {
         console.log(updatedAdvice)
@@ -112,36 +110,38 @@ function rating(req, res) {
   })
 }
 
-// function createRating(req, res) {
-//   console.log("rating", req.body)
-//   // req.body.owner = req.user.profile._id
-//   Rating.create(req.body)
-//   .then(rating => {
-//     res.redirect('/advices')
-//   })
-//   .catch(err => {
-//     console.log(err)
-//     res.redirect('/advices')
-//   })
-// }
+function createRating(req, res) {
+  console.log("rating", req.body)
+  // req.body.owner = req.user.profile._id
+  Rating.create(req.body)
+  .then(rating => {
+    res.redirect('/advices')
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/advices')
+  })
+}
 
-// function deleteRating(req, res) {
-//   Rating.findById(req.params.id)
-//   .then(rating => {
-//     if (rating.owner.equals(req.user.profile._id)){
-//       rating.delete()
-//       .then(deletedRating => {
-//         res.redirect(`/advices`)
-//       })
-//     } else {
-//       throw new Error('NOT AUTHORIZED')
-//     }
-//   })
-//   .catch(err => {
-//     console.log(err)
-//     res.redirect('/advices')
-//   })
-// }
+function updateRating(req, res) {
+  Rating.findById(req.params.id)
+  .then(rating => {
+    if (advice.owner.equals(req.user.profile._id)){
+      rating.updateOne(req.body)
+      .then(updatedRating => {
+        console.log(updatedRating)
+        res.redirect(`/advices`)
+      })
+    } else {
+      throw new Error('NOT AUTHORIZED')
+    }
+    
+  })
+  .catch(err => {
+    console.log(err)
+    res.redirect('/advices')
+  })
+}
 
 
 
@@ -153,4 +153,6 @@ export {
   update,
   deleteAdvice as delete,
   rating,
+  createRating,
+  updateRating,
 }
