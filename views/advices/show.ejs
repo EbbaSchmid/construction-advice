@@ -14,13 +14,8 @@
   <section>
     <section>
       
-        
-        <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="style.css">
-        <title>Star rating using pure CSS</title>
-      </head>
-      
-      <body>
+        <form action="/advices/<%= advice._id %>/ratings"
+      method="POST">
         <div class="rate">
           <input type="radio" id="star5" name="rate" value="5" />
           <label for="star5" title="text">5 stars</label>
@@ -33,7 +28,7 @@
           <input type="radio" id="star1" name="rate" value="1" />
           <label for="star1" title="text">1 star</label>
         </div>
-      </body>
+      
     
       <button id ="showRatingBtn" class ="showBtns" type="submit">Rate this Advice</button>
       </form>

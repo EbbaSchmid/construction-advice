@@ -4,7 +4,7 @@ const Schema = mongoose.Schema
 
 const ratingSchema = new Schema({
   owner: { type: Schema.Types.ObjectId, ref: "Profile" },
-  ratings: Number,
+  rate: Number,
 }, {
   timestamps: true
 })
@@ -14,7 +14,7 @@ const adviceSchema = new Schema({
   text: String,
   owner: { type: Schema.Types.ObjectId, ref: "Profile" },
   tags: [String],
-  ratings: { type: Schema.Types.ObjectId, ref: "Rating" },
+  ratings: [ratingSchema],
 }, {
   timestamps: true
 })

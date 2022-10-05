@@ -19,16 +19,33 @@
         <br>
         <label for="tags-input">Tags:</label>
         <select id="tagsAdviceIndexInput" name="tags">
-          <option value="Weather">Weather</option>
+          <option value="Apprentice-Tip">Apprentice Tip</option>
           <option value="Hygiene">Hygiene</option>
+          <option value="Jobsite">Jobsite Related</option>
+          <option value="Journeymen-Tip">Journeymen Tip</option>
+          <option value="Mental Health">Mental Health</option>
           <option value="Physical Health">Physical Health</option>
           <option value="Tools">Tools</option>
-          <option value="Apprentice-Tip">Apprentice Tip</option>
-          <option value="Journeymen-Tip">Journeymen Tip</option>
+          <option value="Weather">Weather</option>
+          <option value="Work Clothes">Work Clothes</option>
         </select>
-
+        <br>
+        <br>
+        <p>Press "Command" and click above button to select multiple Tags at once.</p>
+        <br>
+        <input id="addMultipleTags" type="button" onclick="multipleFunc()" value="Select Multiple Tags">
+        <br>
+        <br>
+        <p>When finished, add it to share with the Community.</p>
       <button id ="addAdviceBtn" type="submit"> Add Advice</button>
     </form>
+
+    <script>
+      function multipleFunc() {
+        document.getElementById("tagsAdviceIndexInput").multiple = true;
+      }
+    </script>
+
   <% } %>
 <br>
   <h2>Everyone's Advice:</h2>
@@ -36,7 +53,12 @@
     <% advices.forEach(advice => { %>
       <li>
         <a id="adviceIndexText" href="/advices/<%= advice._id %>"><%= advice.text %></a>
-        is rated  <%= advice.ratings %></li>
+        is rated  
+        <p>
+          <%= advice.avg %>
+
+        </p>
+      </li>
     <% }) %>
   
   </ul>

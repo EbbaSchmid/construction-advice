@@ -194,6 +194,8 @@ nav {
   border-radius: 20px;
   color:black;
   font-size: 20px;
+  width: max-content;
+  height: fit-content
 }
 
 main {
@@ -212,7 +214,14 @@ main {
   justify-items: center;
 }
 
-
+#addMultipleTags {
+  background-color: #5C6B73;
+  color: #F1D302;
+  border-radius: 20px;
+  width: 170px;
+  height: 35px;
+  font-size: 18px;
+}
 
 input[type=text] {
   padding:10px;

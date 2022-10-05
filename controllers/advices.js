@@ -1,10 +1,18 @@
 import { Advice } from '../models/advice.js'
 
 function index(req, res) {
-  Advice.find({})
+  Advice.find({}).lean()
   .then(advices => {
+    const advice = advices.map(a => {
+      const total = a.ratings.reduce((t, r) => t + parseInt(r.rate), 0) 
+      return {
+        ...a, 
+        avg: total / a.ratings.length
+      }
+    })
+    console.log(advice)
     res.render('advices/index', {
-      advices: advices,
+      advices: advice,
       title: "Add Advice! 📐"
     })
   })
@@ -110,7 +118,8 @@ function rating(req, res) {
 }
 
 function createRating(req, res) {
-  Advice.findById(req.user.advice._id)
+  console.log(req.body)
+  Advice.findById(req.params.id)
   .then(advice => {
     advice.ratings.push(req.body)
     advice.save()
