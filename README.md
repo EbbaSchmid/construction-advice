@@ -32,13 +32,13 @@ https://construction-advice-tracker.fly.dev
 ---------------------------------------------------------------
 
  **Wireframe Mock-Up Photos:**
-![WireFrame Setup Img](assets/wireframe home-advice.jpg "WireFrame Setup Img1")
-![WireFrame Setup Img](assets/wireframe profiles.jpg "WireFrame Setup Img2")
+![WireFrame Setup Img](assets/wireframehome-advice.jpg "wireframe home-advice")
+![WireFrame Setup Img](assets/wireframeprofiles.jpg "wireframe profiles")
 
 ---------------------------------------------------------------
 
 **ERD Layout:**
-![WireFrame Setup Img](assets/ERD layout.jpg "WireFrame Setup Img1")
+![ERD layout Img](assets/ERDlayout.jpg "ERD layout")
 
 
 ---------------------------------------------------------------

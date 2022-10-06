@@ -11,21 +11,6 @@ html {
   box-sizing: inherit;
 }
 
-
-/* 768px is a common "breakpoint" width for tablets */
-@media only screen and (min-width: 768px) {
-  body {
-    /* tablet - two column display */
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: 50px auto 30px;
-    grid-template-areas: 
-      "header header"
-      "side content"
-      "footer footer";
-  }
-}
-
-
 body {
   background-color: #1a1a1a;
   background-image: url("https://i.imgur.com/Nlrk9Il.jpg"); 
