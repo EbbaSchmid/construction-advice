@@ -24,26 +24,25 @@ function index(req, res) {
 
 function create(req, res) {
   req.body.owner = req.user.profile._id
-  Advice.create(req.body)
-  .then(advice => {
-    res.redirect('/advices')
+    Advice.create(req.body)
+      .then(advice => {
+        res.redirect('/advices')
   })
   .catch(err => {
     console.log(err)
-    res.redirect('/advices')
+      res.redirect('/advices')
   })
 }
 
 function show(req, res) {
   Advice.findById(req.params.id)
-  .populate('owner')
-  .then(advice => {
-    res.render('advices/show', {
-      advice: advice,
-    
-      title: " Advice Details 📐"
+    .populate('owner')
+      .then(advice => {
+      res.render('advices/show', {
+        advice: advice,
+        title: " Advice Details 📐"
+      })
     })
-  })
   .catch(err => {
     console.log(err)
     res.redirect('/advices')
@@ -66,19 +65,18 @@ function edit(req, res) {
 
 function update(req, res) {
   console.log("REQ.BODY", req.body)
-  Advice.findById(req.params.id)
-  .then(advice => {
+    Advice.findById(req.params.id)
+      .then(advice => {
     if (advice.owner.equals(req.user.profile._id)){
       advice.updateOne(req.body)
-      .then(updatedAdvice => {
-        console.log(updatedAdvice)
-        res.redirect(`/advices`)
-      })
+        .then(updatedAdvice => {
+          res.redirect(`/advices`)
+        })
     } else {
       throw new Error('NOT AUTHORIZED')
     }
     
-  })
+    })
   .catch(err => {
     console.log(err)
     res.redirect('/advices')
@@ -118,45 +116,38 @@ function rating(req, res) {
 }
 
 function createRating(req, res) {
-  console.log(req.body)
   Advice.findById(req.params.id)
-  .then(advice => {
-    advice.ratings.push(req.body)
-    advice.save()
-    .then(() => {
-      res.redirect(`/advices/${req.params.id}`)
-    })
+    .then(advice => {
+      advice.ratings.push(req.body)
+      advice.save()
+        .then(() => {
+          res.redirect(`/advices/${req.params.id}`)
+        })
     .catch(err => {
-      console.log(err)
       res.redirect(`/advices/${req.params.id}`)
     })
   })
-  .catch(err => {
-    console.log(err)
-    res.redirect(`/advices/${req.params.id}`)
+    .catch(err => {
+      res.redirect(`/advices/${req.params.id}`)
   })
 }
 
 function updateRating(req, res) {
   Advice.findById(req.params.id)
-  .then(rating => {
-    if (advice.owner.equals(req.user.profile._id)){
-      rating.updateOne(req.body)
-      .then(updatedRating => {
-        console.log(updatedRating)
-        res.redirect(`/advices`)
-      })
-    } else {
-      throw new Error('NOT AUTHORIZED')
-    }
+    .then(rating => {
+      if (advice.owner.equals(req.user.profile._id)){
+        rating.updateOne(req.body)
+        .then(updatedRating => {
+          res.redirect(`/advices`)
+        })
+      } else {
+        throw new Error('NOT AUTHORIZED')
+      }
   })
   .catch(err => {
-    console.log(err)
     res.redirect('/advices')
   })
 }
-
-
 
 export {
   index,

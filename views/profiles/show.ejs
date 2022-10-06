@@ -14,47 +14,43 @@
   <h1>It's <%= isSelf ? "you" : profile.name %>!</h1>
   <% if (isSelf) { %>
     <form 
-    action="/profiles/<%= profile._id %>/icons" method="POST">
-      <label>
-        Name:
-        <input id="bioNameInput"
+      action="/profiles/<%= profile._id %>/icons" method="POST">
+      <label> Name: <input 
+        id="bioNameInput"
         type="text" 
         name="name" 
         autocomplete="off">
       </label>
 
-      <label>
-        Trade:
-        <input id="bioTradeInput"
+      <label>Trade:<input 
+        id="bioTradeInput"
         type="text" 
         name="trade" 
         autocomplete="off">
       </label>
 
-      <label>
-        Years of Experience:
-        <input id="bioYearsInput"
+      <label>Years of Experience:<input 
+        id="bioYearsInput"
         type="number" 
         name="years" 
         autocomplete="off">
       </label>
 
       <br>
-    <label>
-      Current Location:
-      <input id="bioLocationInput"
-      type="text" 
-      name="location" 
-      autocomplete="off">
-    </label>
 
-    <label>
-      Are you in the Union, if so, what Local:
-      <input id="bioLocalInput"
-      type="number" 
-      name="local" 
-      autocomplete="off">
-    </label>
+      <label>Current Location:<input 
+        id="bioLocationInput"
+        type="text" 
+        name="location" 
+        autocomplete="off">
+      </label>
+
+      <label>If you are currently a Member or have been a Member to a Union, what Local were you in:<input 
+        id="bioLocalInput"
+        type="number" 
+        name="local" 
+        autocomplete="off">
+      </label>
 
       <br>
       <button id ="bioAddBtn" type="submit">Add your Bio</button>

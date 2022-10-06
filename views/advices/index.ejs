@@ -58,7 +58,7 @@
     <% advices.forEach(advice => { %>
       <li id="adviceOutputIndex">
         <a id="adviceIndexText" href="/advices/<%= advice._id %>"><%= advice.text %></a>
-          <p>has an average rating of <%= advice.avg %> Stars!</p>
+          <p id="adviceRatingText">has an average rating of <%= advice.avg %> Stars!</p>
       </li>
     <% }) %>
   

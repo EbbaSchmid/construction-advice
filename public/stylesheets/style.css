@@ -12,11 +12,11 @@ html {
 }
 
 body {
-  /* background-color: #1a1a1a; */
-  background: url("backgroundImg.jpeg"); 
+  background-color: #1a1a1a;
+  background-image: url("https://i.imgur.com/5iiY4KQ.jpg"); 
   background-position: right;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   color:#F1D302;
   text-decoration: none;
 }
@@ -153,6 +153,10 @@ nav {
   margin: 30px 0px 30px 30px;
 }
 
+#adviceRatingText{
+  font-size: 28px;
+}
+
 #adviceIntroFrom{
   font-size: 32px;
   background-color: #5C6B73;
@@ -204,8 +208,7 @@ main {
   display: flex;
   color: #F1D302;
   flex-direction: column;
-  column-count: 2;
-
+  column-count: 2; 
 }
 
 #adviceSection {
@@ -230,10 +233,6 @@ main {
   font-weight: bold;
   
 }
-
-
-
-
 
 input[type=text] {
   padding:10px;

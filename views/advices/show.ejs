@@ -14,25 +14,24 @@
   <section>
     <section>
       <p>To rate this Advice, simply click on how many stars you'd like to give and click the "Rate this Advice" once. Your rating will automatically be added to the average rating score!</p>
-        <form action="/advices/<%= advice._id %>/ratings"
-      method="POST">
+        
+      <form action="/advices/<%= advice._id %>/ratings" method="POST">
         <div class="rate">
           <input type="radio" id="star5" name="rate" value="5" />
-          <label for="star5" title="text">5 stars</label>
+            <label for="star5" title="text">5 stars</label>
           <input type="radio" id="star4" name="rate" value="4" />
-          <label for="star4" title="text">4 stars</label>
+            <label for="star4" title="text">4 stars</label>
           <input type="radio" id="star3" name="rate" value="3" />
-          <label for="star3" title="text">3 stars</label>
+            <label for="star3" title="text">3 stars</label>
           <input type="radio" id="star2" name="rate" value="2" />
-          <label for="star2" title="text">2 stars</label>
+            <label for="star2" title="text">2 stars</label>
           <input type="radio" id="star1" name="rate" value="1" />
-          <label for="star1" title="text">1 star</label>
+            <label for="star1" title="text">1 star</label>
         </div>
-      
+
       <button id ="showRatingBtn" class ="showBtns" type="submit">Rate this Advice</button>
       </form>
     </section>
-    </ul>
   </section>
 
 
@@ -45,7 +44,7 @@
       <br>
       <button id ="showEditBtn" class="showBtns">Edit Advice</button>
     </a>
-    <br>
+      <br>
     <form action="/advices/<%= advice._id %>?_method=DELETE" method="POST">
       <button id ="showDeleteBtn" class="showBtns" type="submit">Delete Advice</button>
     </form>
