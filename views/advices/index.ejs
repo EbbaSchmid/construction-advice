@@ -48,16 +48,16 @@
 
   <% } %>
 <br>
+<hr>
+<br>
   <h2>Everyone's Advice:</h2>
+  <p>Click on the Advice below to read more and rate it.</p>
+  <br>
   <ul>
     <% advices.forEach(advice => { %>
-      <li>
+      <li id="adviceOutputIndex">
         <a id="adviceIndexText" href="/advices/<%= advice._id %>"><%= advice.text %></a>
-        is rated  
-        <p>
-          <%= advice.avg %>
-
-        </p>
+          <p>has an average rating of <%= advice.avg %> Stars!</p>
       </li>
     <% }) %>
   

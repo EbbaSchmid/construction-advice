@@ -13,7 +13,7 @@
 <br>
   <section>
     <section>
-      
+      <p>To rate this Advice, simply click on how many stars you'd like to give and click the "Rate this Advice" once. Your rating will automatically be added to the average rating score!</p>
         <form action="/advices/<%= advice._id %>/ratings"
       method="POST">
         <div class="rate">
@@ -29,7 +29,6 @@
           <label for="star1" title="text">1 star</label>
         </div>
       
-    
       <button id ="showRatingBtn" class ="showBtns" type="submit">Rate this Advice</button>
       </form>
     </section>
@@ -39,15 +38,11 @@
 
 
   <% if (user) { %>
-    <!-- <form
-      action="/advices/<%= advice._id %>/rating?_method=PATCH"
-      method="POST">
-      <button id ="show" class="btn" type="submit"> </button>
-    </form> -->
   <% } %>
 
   <% if (advice.owner.equals(user?.profile._id)) { %>
     <a href="/advices/<%= advice._id %>/edit">
+      <br>
       <button id ="showEditBtn" class="showBtns">Edit Advice</button>
     </a>
     <br>

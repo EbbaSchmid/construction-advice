@@ -198,6 +198,10 @@ nav {
   height: fit-content
 }
 
+#adviceOutputIndex {
+  font-size: 20px;
+}
+
 main {
   display: flex;
   color: #F1D302;
