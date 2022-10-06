@@ -1,25 +1,40 @@
+# Construction Advice Tracker
 
-This tracker is used to offer tips & tricks for those in the Construction industry. 
+https://construction-advice-tracker.fly.dev
 
+**Overview:**
 
-The advice you give can be directed towards people thinking about getting into Construction, Apprentices, Journeyman and beyond!
+- This tracker is used to offer tips & tricks for those in the Construction industry. 
 
+- I know when I first started out as a Union Carpenter, I had a lot of questions! I also sometimes didn’t know what questions to even ask. 
 
-I know when I first started out as a Union Carpenter, I had a lot of questions! I also sometimes didn’t know what questions to even ask. 
+- Let’s pay it forward and reach back to lift as we climb.
 
+---------------------------------------------------------------
 
-Let’s pay it forward and reach back to lift as we climb.
-
-
-Get started by creating a Profile!
-
-
-“Lifting as we climb, onward and upward we go, struggling and striving and hoping that the buds and blossoms of our desires will burst into glorious fruition ere long …”
-
--Mary Church Terrell (1863-1954) 
-Suffragist and Civil Rights Champion
-
-----------------------
- Technology Used & Sources: 
+ **Technology Used & Sources:** 
  
- Modified Star Rating CSS from https://github.com/mukulkant/Star-rating-using-pure-css 
+ - VS Code, GitHub, CSS, Javascript, HTML, Google Image Search
+
+ - Modified Star Rating CSS code from https://github.com/mukulkant/Star-rating-using-pure-css 
+
+---------------------------------------------------------------
+
+ **Wireframe Mock-Up Photos:**
+![WireFrame Setup Img](assets/wireframe home-advice.jpg "WireFrame Setup Img1")
+![WireFrame Setup Img](assets/wireframe profiles.jpg "WireFrame Setup Img1")
+
+---------------------------------------------------------------
+
+**ERD Layout:**
+![WireFrame Setup Img](assets/ERD layout.jpg "WireFrame Setup Img1")
+
+
+---------------------------------------------------------------
+ 
+ **Future Developments:**
+
+ - Add more Tag Terms
+ - Add more elements to the Bio section
+ - Add more interactive elements between Profiles
+ - More styling overall
