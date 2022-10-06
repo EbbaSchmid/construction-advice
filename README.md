@@ -14,15 +14,26 @@ https://construction-advice-tracker.fly.dev
 
  **Technology Used & Sources:** 
  
- - VS Code, GitHub, CSS, Javascript, HTML, Google Image Search
+ - VS Code, GitHub, CSS, Javascript, HTML, Google Image Search, Whimsical, Google OAuth, Express, MonogoDB, Mongoose
+
+ - Trello Link: https://trello.com/b/Ys0lt9eo/construction-advice-tracker
 
  - Modified Star Rating CSS code from https://github.com/mukulkant/Star-rating-using-pure-css 
+
+
+---------------------------------------------------------------
+
+**Screen Shots of Deployed App:**
+![Deployed App photos](assets/HomeScreen.jpg "Deployed App photos")
+![Deployed App photos](assets/ProfilesScreen.jpg "Deployed App photos")
+![Deployed App photos](assets/AdviceScreen.jpg "Deployed App photos")
+
 
 ---------------------------------------------------------------
 
  **Wireframe Mock-Up Photos:**
 ![WireFrame Setup Img](assets/wireframe home-advice.jpg "WireFrame Setup Img1")
-![WireFrame Setup Img](assets/wireframe profiles.jpg "WireFrame Setup Img1")
+![WireFrame Setup Img](assets/wireframe profiles.jpg "WireFrame Setup Img2")
 
 ---------------------------------------------------------------
 
