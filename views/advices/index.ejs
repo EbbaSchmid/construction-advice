@@ -31,13 +31,13 @@
         </select>
         <br>
         <br>
-        <p>Press "Command" and click above button to select multiple Tags at once.</p>
         <br>
         <input id="addMultipleTags" type="button" onclick="multipleFunc()" value="Select Multiple Tags">
+        <p>Press "Command" and click to select multiple Tags at once.</p>
         <br>
         <br>
+        <button id ="addAdviceBtn" type="submit"> Add Advice</button>
         <p>When finished, add it to share with the Community.</p>
-      <button id ="addAdviceBtn" type="submit"> Add Advice</button>
     </form>
 
     <script>
@@ -50,6 +50,7 @@
 <br>
 <hr>
 <br>
+<div id="allAdviceSection">
   <h2>Everyone's Advice:</h2>
   <p>Click on the Advice below to read more and rate it.</p>
   <br>
@@ -62,6 +63,7 @@
     <% }) %>
   
   </ul>
+</div>
 </section>
 
 <%- include('../partials/footer') %>
